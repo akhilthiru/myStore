@@ -1,0 +1,13 @@
+.wrapper{
+    margin-top: 80px;
+}
+
+img{
+    min-height: 200px;
+}
+
+footer{
+    background-color:black;
+    color: white;
+    padding: 0px 20px;
+}
