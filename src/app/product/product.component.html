@@ -1,15 +1,14 @@
 
     <div class="card custom-card">
         <img class="card-img-top"
-            [src]='content.image'
-            [alt]='content.imageAlt'>
+            [src]='content.imageUrl'>
         <div class="card-body">
-            <h5 class="card-title">{{content.name | uppercase}}</h5>
+            <h5 class="card-title">{{content.title | uppercase}}</h5>
             <p class="card-text">{{content.description}}</p>
             <a href="#" *ngIf="content.isAvailable; else soldOut" class="btn btn-success" (click)='addToCart()'>Add to Cart</a>
             <ng-template #soldOut>
                 <a href="#" class="btn btn-danger">Sold Out</a>
             </ng-template>
-            <a href="#" class="btn btn-dark pull-right">View Details</a>
+            <a (click)='goToDetails(content.id)' class="btn btn-dark pull-right">View Details</a>
         </div>
     </div>

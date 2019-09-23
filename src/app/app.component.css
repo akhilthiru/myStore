@@ -2,6 +2,9 @@
 
 .wrapper{
     margin-top: 80px;
+    padding: 30px;
+    min-height: calc(100vh - 192px);
+    
 }
 
 img{

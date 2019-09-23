@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,11 @@ addToCart() {
   console.log('click');
 }
 
-constructor() { }
+constructor(private router: Router) { }
+
+goToDetails(productId){
+  this.router.navigate(['product', productId]);
+}
 
 ngOnInit() {
 }

@@ -1,34 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
-  products: Product[] = [
-    {
-      name: `Business`,
-      // tslint:disable-next-line: max-line-length
-      image: `https://images.unsplash.com/photo-1565281756735-f5d99a69c1bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80`,
-      imageAlt: `Dress`,
-      description: `Shirt, Pant and Sneakers`,
-      isAvailable: true,
-    },
-    {
-      name: 'Home',
-      // tslint:disable-next-line: max-line-length
-      image: `https://images.unsplash.com/photo-1565281756735-f5d99a69c1bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80`,
-      imageAlt: `Dress`,
-      description: `Shirt, Pant and Sneakers, and whole, blah`,
-      isAvailable: false,
-    }
-  ];
+  // products: Product[] = [
+  //   {
+  //     title: `Business`,
+  //     // tslint:disable-next-line: max-line-length
+  //     imageUrl: `https://images.unsplash.com/photo-1565281756735-f5d99a69c1bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80`,
+  //     description: `Shirt, Pant and Sneakers`,
+  //     isAvailable: true,
+  //     price: 99
+  //   },
+  //   {
+  //     title: 'Home',
+  //     // tslint:disable-next-line: max-line-length
+  //     imageUrl: `https://images.unsplash.com/photo-1565281756735-f5d99a69c1bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80`,
+  //     description: `Shirt, Pant and Sneakers, and whole, blah`,
+  //     isAvailable: false,
+  //     price: 100
+  //   }
+  // ];
 
   getProducts() {
-    return this.products;
+    return this.httpClient.get('http://localhost:3000/product');
   }
 
 }
