@@ -1,11 +1,15 @@
 
     <div class="card custom-card">
         <img class="card-img-top"
-            src="https://images.unsplash.com/photo-1565281756735-f5d99a69c1bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-            alt="Card image cap">
+            [src]='content.image'
+            [alt]='content.imageAlt'>
         <div class="card-body">
-            <h5 class="card-title">Business Casual</h5>
-            <p class="card-text">White Shirt, Beige Pants and White Sneakers</p>
-            <a href="#" class="btn btn-dark">Add to Cart</a>
+            <h5 class="card-title">{{content.name | uppercase}}</h5>
+            <p class="card-text">{{content.description}}</p>
+            <a href="#" *ngIf="content.isAvailable; else soldOut" class="btn btn-success" (click)='addToCart()'>Add to Cart</a>
+            <ng-template #soldOut>
+                <a href="#" class="btn btn-danger">Sold Out</a>
+            </ng-template>
+            <a href="#" class="btn btn-dark pull-right">View Details</a>
         </div>
     </div>

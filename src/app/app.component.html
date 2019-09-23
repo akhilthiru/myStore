@@ -2,14 +2,7 @@
 <div class="container wrapper">
   <app-search></app-search>
   <div class="row">
-      <app-product class="col-4"></app-product>
+      <app-product *ngFor="let product of products" class="col-4" [content] = 'product'></app-product>    
   </div>
 </div>
-<footer class="page-footer">
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3 d-flex justify-content-end">&copy; Copyright: my Choice
-  </div>
-  <!-- Copyright -->
-
-</footer>
+<app-footer></app-footer>
