@@ -1,4 +1,5 @@
-<app-search></app-search>
+<h1>{{searchResult}}</h1>
+<app-search (pushEvent)="pushMessage($event)"></app-search>
 <div class="row">
     <app-product *ngFor="let product of products" class="col-lg-4 col-md-6 col-sm-12" [content] = 'product'></app-product>    
 </div>

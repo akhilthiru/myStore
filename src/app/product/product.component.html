@@ -3,11 +3,11 @@
         <img class="card-img-top"
             [src]='content.imageUrl'>
         <div class="card-body">
-            <h5 class="card-title">{{content.title | uppercase}}</h5>
+            <span class="card-title">{{content.title | uppercase}}</span><span class="pull-right card-title">${{content.price}}</span>
             <p class="card-text">{{content.description}}</p>
             <a href="#" *ngIf="content.isAvailable; else soldOut" class="btn btn-success" (click)='addToCart()'>Add to Cart</a>
             <ng-template #soldOut>
-                <a href="#" class="btn btn-danger">Sold Out</a>
+                <a href="#" class="btn btn-danger" tooltip="Its Sold Out">Sold Out</a>
             </ng-template>
             <a (click)='goToDetails(content.id)' class="btn btn-dark pull-right">View Details</a>
         </div>

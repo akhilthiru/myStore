@@ -14,13 +14,25 @@
     </div>
 </div> -->
 
-<div class="card">
+<!-- <div class="card">
         <div class="card-header">
           Featured
         </div>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">{{product ? product.title : ''}}</h5>
+          <p class="card-text">{{product ? product.description : ''}}</p>
         </div>
-      </div>
+      </div> -->
+
+<div class="card mb-3" *ngIf = "product">
+    <img src= '{{product.imageUrl}}' class="card-img-top">
+    <div class="card-body">
+        <h4 class="card-title">{{product.title}}</h4>
+        <h5>${{product.price}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <a (click)= 'addToCart()' class="btn btn-success" *ngIf = "product.isAvailable; else soldOut">Add to Cart</a>
+        <ng-template #soldOut>
+            <a href="#" class="btn btn-danger">Sold Out</a>
+        </ng-template>
+    </div>
+</div>  

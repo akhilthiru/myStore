@@ -5,3 +5,8 @@
 .pull-right{
     float: right;
 }
+
+.card-title{
+    font-family: sans-serif;
+    font-size: 25px;
+}

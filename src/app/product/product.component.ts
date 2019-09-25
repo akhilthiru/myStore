@@ -16,7 +16,7 @@ addToCart() {
 
 constructor(private router: Router) { }
 
-goToDetails(productId){
+goToDetails(productId) {
   this.router.navigate(['product', productId]);
 }
 

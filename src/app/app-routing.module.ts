@@ -4,6 +4,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './services/product.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 const routes: Routes = [{
@@ -17,6 +18,10 @@ const routes: Routes = [{
 {
   path: 'checkout',
   component: CheckoutComponent
+},
+{
+  path: 'add-product',
+  component: AddProductComponent
 },
 {
   path: '**',
